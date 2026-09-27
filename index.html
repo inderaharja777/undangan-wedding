@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta name="theme-color" content="#ad9b83" />
+    <title>Ica & Asep — Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- =========================================================
+       1. COVER / HALAMAN PEMBUKA
+       ========================================================= -->
+    <section id="cover" class="cover section-bg">
+      <div class="overlay"></div>
+
+      <div class="cover-content reveal-pop">
+        <p class="eyebrow">THE WEDDING OF</p>
+        <h1>Ica <span>&amp;</span> Asep</h1>
+
+        <p class="recipient-label">Kepada Yth.</p>
+        <p class="recipient" id="recipientName">Bapak/Ibu/Saudara/i</p>
+
+        <button class="btn btn-outline" id="openInvitation">
+          <span class="icon">📩</span>
+          BUKA UNDANGAN
+        </button>
+      </div>
+    </section>
+
+    <!-- Konten utama disembunyikan sampai tombol buka ditekan -->
+    <main id="mainContent" class="hidden">
+      <!-- Floating music -->
+      <button class="music-button" id="musicButton" aria-label="Putar musik">
+        <span id="musicIcon">♫</span>
+      </button>
+      <audio id="weddingMusic" preload="auto">
+        <!-- Ganti file dengan: assets/music/music.mp3 -->
+        <source src="assets/music/rusuk.mp3" type="audio/mpeg" />
+      </audio>
+
+      <!-- =======================================================
+         2. HERO + COUNTDOWN
+         ======================================================= -->
+      <section class="hero section-bg" id="home">
+        <div class="overlay"></div>
+        <div class="hero-content reveal-pop">
+          <p class="eyebrow">The Wedding of</p>
+          <h2>Ica <span>&amp;</span> Asep</h2>
+
+          <div class="countdown" id="countdown">
+            <div class="time-box">
+              <strong id="days">0</strong><span>Hari</span>
+            </div>
+            <div class="time-box">
+              <strong id="hours">0</strong><span>Jam</span>
+            </div>
+            <div class="time-box">
+              <strong id="minutes">0</strong><span>Menit</span>
+            </div>
+            <div class="time-box">
+              <strong id="seconds">0</strong><span>Detik</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================
+         3. INTRO
+         ======================================================= -->
+      <section class="intro section-white reveal">
+        <div class="ornament">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+        <h2 class="greeting-title">Assalamu’alaikum Wr. Wb.</h2>
+        <p>
+          Tanpa mengurangi rasa hormat, perkenankan kami mengundang
+          Bapak/Ibu/Saudara/i, serta kerabat sekalian, untuk menghadiri acara
+          pernikahan kami.
+        </p>
+      </section>
+
+      <!-- =======================================================
+         4. MEMPELAI
+         ======================================================= -->
+      <section class="couple section-white">
+  <div class="person-card bride reveal-left">
+    <div class="person-photo">
+      <img
+        src="assets/images/bride.png"
+        alt="Foto Goca"
+        onerror="imageFallback(this)"
+      />
+    </div>
+
+    <div class="person-info reveal">
+      <h2>Siti Nurhalisyah,&nbsp;<br />S.Pd.</h2>
+      <p>
+        Putri Pertama (Alm) Bpk. Muhammad Nur Maulana<br />&amp; Ibu Siti
+        Salbiah
+      </p>
+    </div>
+  </div>
+
+  <div class="ampersand reveal-pop">&amp;</div>
+
+  <div class="person-card groom reveal-right">
+    <div class="person-info reveal">
+      <h2>Asep Alwi</h2>
+      <p>Putra kedua dari Bpk. Henda<br />&amp; Ibu Wati</p>
+    </div>
+
+    <div class="person-photo">
+      <img
+        src="assets/images/groom.png"
+        alt="Asep"
+        onerror="imageFallback(this)"
+      />
+    </div>
+  </div>
+</section>
+
+      <!-- =======================================================
+         5. AKAD NIKAH
+         ======================================================= -->
+      <section class="event-section section-brown">
+        <div class="event-card reveal">
+          <img
+            src="assets/images/akad.jpg"
+            alt="Akad Nikah"
+            onerror="imageFallback(this)"
+          />
+          <div class="event-content">
+    <h2>Akad &amp; Resepsi Nikah</h2>
+
+    <p>Rabu, 21 Oktober 2026</p>
+
+    <p>
+        Akad Nikah : 10.00 WIB
+    </p>
+
+    <p>
+        Resepsi : 13.00 WIB - 16.00 WIB
+    </p>
+
+    <h3>Tempat :</h3>
+
+    <p>
+        Yayasan El Mahabah Kramat Jati
+    </p>
+            <a
+              class="btn btn-brown"
+              href="https://maps.app.goo.gl/GWPnAdNaRLktJhrF8?g_st=aw"
+              target="_blank"
+              rel="noopener"
+            >
+              <span>⌖</span> Buka Maps
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================================================
+         6. GALERI
+         ======================================================= -->
+      <section class="gallery section-white">
+        <h2 class="section-title">Our Gallery</h2>
+
+        <div class="gallery-grid">
+          <img class="reveal"
+            src="assets/images/gallery-1.jpg"
+            alt="Gallery 1"
+            onerror="imageFallback(this)"
+          />
+          <img class="reveal"
+            src="assets/images/gallery-2.jpg"
+            alt="Gallery 2"
+            onerror="imageFallback(this)"
+          />
+      </section>
+
+   <!-- ======================================================= 
+     7. WEDDING GIFT 
+     ======================================================= --> 
+
+<section class="gift-section section-brown">
+
+  <div class="gift-intro reveal">
+
+    <img 
+      src="assets/images/couple-gift.jpg" 
+      alt="Ica & Asep" 
+      onerror="imageFallback(this)" 
+    />
+
+    <div class="gift-text">
+
+      <h2>Wedding Gift</h2>
+
+      <p>
+        Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan 
+        tanda kasih untuk kami, dapat melalui:
+      </p>
+
+      <!-- TOMBOL BUKA GIFT -->
+      <button 
+        class="btn btn-white gift-button"
+        id="giftButton"
+        type="button"
+      >
+        🎁 Klik Disini
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ===================================================
+       DETAIL WEDDING GIFT
+       AWALNYA TERSEMBUNYI
+       =================================================== -->
+
+  <div class="gift-cards" id="giftCards">
+
+    <!-- SEABANK -->
+    <article class="bank-card">
+
+        <div class="bank-logo">
+            <img 
+                src="assets/images/Seabank.png" 
+                alt="Bank SeaBank"
+            >
+        </div>
+
+        <div class="chip"></div>
+
+        <p class="account-name">
+            a.n Siti Nurhalisyah
+        </p>
+
+        <p class="account-number">
+            901430616571
+        </p>
+
+        <button 
+            class="copy-btn" 
+            data-copy="901430616571"
+        >
+            Salin Nomor ⧉
+        </button>
+
+    </article>
+
+
+    <!-- BNI -->
+    <article class="bank-card">
+
+        <div class="bank-logo">
+            <img 
+                src="assets/images/BNI.png" 
+                alt="Bank BNI"
+            >
+        </div>
+
+        <div class="chip"></div>
+
+        <p class="account-name">
+            a.n ASEP ALWI
+        </p>
+
+        <p class="account-number">
+            1891581093
+        </p>
+
+        <button 
+            class="copy-btn" 
+            data-copy="1891581093"
+        >
+            Salin Nomor ⧉
+        </button>
+
+    </article>
+
+    <!-- ALAMAT HADIAH -->
+    <article class="bank-card address-card">
+
+      <div class="gift-icon">
+        🎁
+      </div>
+
+      <h3>
+        Kirim Hadiah
+      </h3>
+
+      <p>
+        <strong>Penerima:</strong> Siti Nurhalisyah
+      </p> 
+
+      <p>
+        Gg.Musholah ar rahman No.12A 
+        RT005/008.KRAMAT JATI
+        JAKARTA TIMUR, DKI JAKARTA, 13540
+      </p>
+
+      <button 
+        class="copy-btn"
+        data-copy="Gg.Musholah ar rahman No.12A RT005/008.KRAMAT JATI,JAKARTA TIMUR, DKI JAKARTA, 13540"
+      >
+        Salin Alamat ⧉
+      </button>
+
+    </article>
+
+  </div>
+
+</section>
+      <!-- =======================================================
+         8. UCAPAN & DOA
+         ======================================================= -->
+      <section class="comments-section section-brown">
+        <h2 class="section-title light">Berikan Ucapan &amp; Doa</h2>
+
+        <div class="comments-box">
+          <div class="comment-count">
+            <span id="commentCount">0</span> Comments
+          </div>
+
+          <form id="commentForm">
+            <input id="commentName" type="text" placeholder="Nama" required />
+            <textarea id="commentText" placeholder="Ucapan" required></textarea>
+            <select id="attendance" required>
+              <option value="">Konfirmasi Kehadiran</option>
+              <option>Hadir</option>
+              <option>Tidak Hadir</option>
+            </select>
+            <button class="btn btn-brown" type="submit">➤ Kirim</button>
+          </form>
+
+          <div id="commentList"></div>
+        </div>
+      </section>
+
+      <!-- =======================================================
+         9. CLOSING
+         ======================================================= -->
+      <section class="closing section-bg"> 
+  <div class="overlay"></div> 
+  <div class="closing-content reveal">
+    <p>Thank You</p> 
+    <h2>Ica &amp; Asep</h2>
+    <!-- SUPPORTED BY -->
+    <div class="supported-by">
+      <span>Supported by:</span>
+      <img 
+        src="assets/images/logo amory cetak.png"
+        alt="Supported by"
+      >
+    </div>
+  </div> 
+</section>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

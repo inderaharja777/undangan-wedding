@@ -1,0 +1,1307 @@
+/* =========================================================
+   WEDDING INVITATION — MOBILE FIRST
+   Semua ukuran utama dibuat agar nyaman di HP.
+   ========================================================= */
+
+:root {
+  /* PALET MODERN — visual only */
+  --brown: #a58f78;
+  --brown-dark: #8f795f;
+  --brown-light: #c8b39a;
+  --brown-gradient: linear-gradient(
+    135deg,
+    #b7a18a 0%,
+    #9c856c 52%,
+    #8c7359 100%
+  );
+  --brown-soft-gradient: linear-gradient(135deg, #c9b59d 0%, #a99177 100%);
+  --cream: #f8f5ef;
+  --white: #ffffff;
+  --text: #3d3832;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Montserrat", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(180deg, #a9957e 0%, #9d876e 48%, #aa947c 100%);
+  color: var(--text);
+  font-family: var(--serif);
+  overflow-x: hidden;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- Common ---------- */
+
+.section-white {
+  background: var(--white);
+}
+
+.section-brown {
+  background: var(--brown);
+}
+
+.section-bg {
+  position: relative;
+  min-height: 100svh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(45, 39, 31, 0.28);
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+.btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 25px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-outline {
+  color: white;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.btn-brown {
+  background: var(--brown);
+  color: white;
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
+.btn-white {
+  background: white;
+  color: var(--brown-dark);
+  font-family: var(--sans);
+  font-weight: 600;
+}
+
+/* ---------- Cover ---------- */
+
+.cover {
+  background-image: url("../assets/images/cover.png");
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 100svh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 70px 25px 80px;
+}
+
+.cover-content h1 {
+  font-size: clamp(48px, 13vw, 78px);
+  line-height: 0.95;
+  margin: 12px 0 55px;
+}
+
+.cover-content h1 span,
+.hero h2 span {
+  font-style: italic;
+}
+
+.recipient-label {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.recipient {
+  font-size: 21px;
+  margin-bottom: 28px;
+}
+
+.cover-content .btn {
+  min-width: 230px;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 1.2px;
+}
+
+/* ---------- Music ---------- */
+
+.music-button {
+  position: fixed;
+  z-index: 50;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--brown-gradient);
+  color: white;
+  font-size: 27px;
+  box-shadow: 0 8px 22px rgba(70, 52, 35, 0.25);
+  cursor: pointer;
+}
+
+.music-button.playing {
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 8px rgba(173, 155, 131, 0.2);
+  }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  background-image: url("../assets/images/hero.jpg");
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 60px 18px 90px;
+}
+
+.hero h2 {
+  font-size: clamp(48px, 13vw, 78px);
+  line-height: 0.95;
+  margin: 10px 0 35px;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  max-width: 370px;
+  margin: auto;
+}
+
+.time-box {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 12px 4px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.time-box strong {
+  display: block;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.time-box span {
+  font-family: var(--serif);
+  font-size: 15px;
+}
+
+/* ---------- Intro ---------- */
+
+.intro {
+  text-align: center;
+  padding: 75px 35px 90px;
+}
+
+.ornament {
+  font-size: 25px;
+  margin-bottom: 28px;
+}
+
+.intro h2 {
+  font-size: 31px;
+  margin-bottom: 18px;
+}
+
+.intro p {
+  max-width: 620px;
+  margin: auto;
+  font-size: 21px;
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* ---------- Couple ---------- */
+
+.couple {
+  padding: 30px 24px 85px;
+  background: #ffffff;
+}
+
+.greeting-title {
+  white-space: nowrap;
+  font-size: clamp(24px, 7vw, 40px);
+  letter-spacing: -0.5px;
+}
+/* =========================
+   CARD PENGANTIN
+   ========================= */
+
+.person-card {
+  position: relative;
+  margin: 0 auto 65px;
+  max-width: 600px;
+}
+
+/* =========================
+   FRAME FOTO
+   ========================= */
+
+.person-photo {
+  width: 82%;
+  margin-left: 0;
+
+  /* frame */
+  border: 9px solid var(--brown);
+
+  /* rounded modern */
+  border-radius: 32px;
+
+  padding: 0;
+  overflow: hidden;
+
+  background: #ddd;
+
+  /* soft shadow */
+  box-shadow:
+    0 12px 30px rgba(73, 55, 38, 0.12),
+    0 3px 8px rgba(73, 55, 38, 0.08);
+
+  /* supaya animasi halus */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Foto di dalam frame */
+
+.person-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+
+  border-radius: 22px;
+
+  display: block;
+}
+
+/* =========================
+   INFO NAMA PENGANTIN
+   ========================= */
+
+.person-info {
+  position: relative;
+
+  margin-top: -28px;
+  margin-left: 14%;
+
+  width: 82%;
+
+  padding: 27px 23px 29px;
+
+  /* coklat gradient */
+  background: linear-gradient(135deg, #b9a58e 0%, #a79279 48%, #927b62 100%);
+
+  color: white;
+
+  /* rounded */
+  border-radius: 26px;
+
+  /* shadow */
+  box-shadow:
+    0 14px 30px rgba(73, 55, 38, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+
+  z-index: 3;
+}
+
+/* =========================
+   NAMA
+   ========================= */
+
+.person-info h2 {
+  font-size: 34px;
+  line-height: 1.02;
+  white-space: nowrap;
+  margin-bottom: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.2px;
+}
+
+/* =========================
+   ORANG TUA
+   ========================= */
+
+.person-info p {
+  font-size: 18px;
+  line-height: 1.55;
+
+  font-style: italic;
+
+  opacity: 0.95;
+}
+
+/* =========================
+   THE BRIDE / THE GROOM
+   ========================= */
+
+.vertical-title {
+  position: absolute;
+
+  right: -48px;
+  top: -105px;
+
+  color: var(--brown);
+
+  font-family: var(--serif);
+
+  font-size: 38px;
+
+  letter-spacing: 2px;
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   GROOM
+   ========================= */
+
+.groom .person-photo {
+  margin-left: auto;
+}
+
+.groom .person-info {
+  margin-left: 0;
+  margin-top: -28px;
+
+  margin-right: 14%;
+}
+
+.groom .vertical-title {
+  left: -48px;
+  right: auto;
+}
+
+/* =========================
+   AMPERSAND
+   ========================= */
+
+.ampersand {
+  text-align: center;
+  color: var(--brown);
+  font-size: 76px;
+  line-height: 0.5;
+
+  /* naikkan posisi & */
+  margin: -40px 0 45px;
+
+  font-family: var(--serif);
+  font-weight: 500;
+
+  text-shadow: 0 6px 15px rgba(73, 55, 38, 0.1);
+}
+
+/* ---------- Event ---------- */
+
+.event-section {
+  padding: 55px 20px;
+}
+
+.event-card {
+  max-width: 620px;
+  margin: auto;
+  background: linear-gradient(180deg, #ffffff 0%, #faf7f2 100%);
+  border-radius: 34px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(73, 55, 38, 0.13);
+}
+
+.event-card > img {
+  aspect-ratio: 1.4 / 1;
+}
+
+.event-content {
+  padding: 38px 22px 45px;
+  text-align: center;
+}
+
+.event-content h2,
+.section-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 40px;
+  color: var(--brown);
+}
+
+.event-content > p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.event-content h3 {
+  margin-top: 28px;
+  margin-bottom: 8px;
+  font-family: var(--sans);
+  font-size: 16px;
+}
+
+.event-content .btn {
+  margin-top: 24px;
+  min-width: 180px;
+}
+
+/* ---------- Gallery ---------- */
+
+.gallery {
+  padding: 65px 28px 75px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.gallery-grid img {
+  border-radius: 18px;
+  aspect-ratio: 1 / 1;
+  background: #ddd;
+}
+
+/* ---------- Gift ---------- */
+/* =========================================================
+   WEDDING GIFT
+   ========================================================= */
+
+.gift-section {
+  background: linear-gradient(180deg, #aa967e 0%, #a59179 50%, #aa967e 100%);
+
+  /* Jarak dari Gallery ke Wedding Gift */
+  padding: 80px 24px 120px;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   CARD PEMBUKA WEDDING GIFT
+   ========================================================= */
+
+.gift-intro {
+  width: 100%;
+  max-width: 660px;
+
+  margin: 0 auto;
+
+  background: linear-gradient(180deg, #ffffff 0%, #fcfaf7 100%);
+
+  border-radius: 36px;
+
+  overflow: hidden;
+
+  box-shadow: 0 18px 40px rgba(73, 55, 38, 0.16);
+}
+
+/* =========================================================
+   FOTO WEDDING GIFT
+   ========================================================= */
+
+.gift-intro > img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: cover;
+
+  margin: 0;
+
+  border-radius: 36px 36px 0 0;
+}
+
+/* =========================================================
+   TEKS WEDDING GIFT
+   ========================================================= */
+
+.gift-text {
+  padding: 42px 28px 48px;
+
+  text-align: center;
+}
+
+/* Judul */
+
+.gift-text h2 {
+  text-transform: uppercase;
+
+  font-size: 39px;
+
+  line-height: 1.1;
+
+  color: var(--brown);
+
+  margin: 0 0 18px;
+
+  letter-spacing: 0.5px;
+}
+
+/* Deskripsi */
+
+.gift-text p {
+  font-size: 20px;
+
+  line-height: 1.65;
+
+  margin: 0 auto 30px;
+
+  max-width: 570px;
+
+  color: #594f47;
+}
+
+/* =========================================================
+   TOMBOL KLIK DISINI
+   ========================================================= */
+
+.gift-text .btn {
+  border-radius: 999px;
+
+  padding: 14px 30px;
+
+  min-width: 170px;
+
+  border: none;
+
+  box-shadow: 0 8px 18px rgba(73, 55, 38, 0.1);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.gift-text .btn:active {
+  transform: scale(0.96);
+}
+
+/* =========================================================
+   GIFT CARDS
+   ========================================================= */
+
+.gift-cards {
+  max-width: 620px;
+
+  margin: 45px auto 0;
+
+  display: none;
+
+  gap: 28px;
+}
+
+/* Saat dibuka */
+
+.gift-cards.show {
+  display: grid;
+
+  animation: giftCardsShow 0.8s ease forwards;
+}
+
+/* =========================================================
+   ANIMASI MUNCUL
+   ========================================================= */
+
+@keyframes giftCardsShow {
+  0% {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   BANK CARD
+   ========================================================= */
+
+.bank-card {
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(190, 190, 190, 0.16),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #ffffff 0%, #f8f6f3 55%, #eeeeec 100%);
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  border-radius: 30px;
+
+  min-height: 235px;
+
+  padding: 30px 25px 22px;
+
+  box-shadow: 0 14px 32px rgba(60, 45, 30, 0.15);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   LOGO BANK
+   ========================================================= */
+
+.bank-logo {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 145px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+/* LOGO PNG */
+
+.bank-logo img {
+  width: auto !important;
+  height: 42px !important;
+  max-width: 145px !important;
+  max-height: 48px !important;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+/* =========================================================
+   CHIP
+   ========================================================= */
+
+.chip {
+  width: 48px;
+  height: 35px;
+
+  border-radius: 9px;
+
+  background: linear-gradient(135deg, #f2e7a6 0%, #d6c46d 45%, #b89e48 100%);
+
+  margin: 34px 0 28px;
+
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================================
+   NOMOR REKENING
+   ========================================================= */
+
+.account-name {
+  font-family: var(--sans);
+
+  font-size: 20px;
+
+  margin: 0 0 7px;
+
+  color: #282522;
+}
+
+.account-number {
+  font-family: var(--sans);
+
+  font-size: 23px;
+
+  letter-spacing: 1px;
+
+  margin: 0;
+
+  color: #282522;
+}
+
+/* =========================================================
+   TOMBOL SALIN
+   ========================================================= */
+
+.copy-btn {
+  width: 100%;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  padding: 13px;
+
+  margin-top: 22px;
+
+  background: linear-gradient(135deg, #756b61 0%, #5f5a55 100%);
+
+  color: white;
+
+  font-family: var(--sans);
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 15px rgba(60, 45, 30, 0.12);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.copy-btn:active {
+  transform: scale(0.97);
+}
+
+/* =========================================================
+   ALAMAT HADIAH
+   ========================================================= */
+
+.address-card {
+  text-align: center;
+
+  min-height: 330px;
+
+  padding-top: 34px;
+}
+
+.gift-icon {
+  font-size: 40px;
+
+  margin-bottom: 8px;
+}
+
+.address-card h3 {
+  font-size: 27px;
+
+  margin: 0 0 12px;
+
+  color: #403a35;
+}
+
+.address-card p {
+  font-family: var(--sans);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color: #4e4944;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .gift-section {
+    padding: 70px 38px 110px;
+  }
+
+  .gift-intro {
+    border-radius: 32px;
+  }
+
+  .gift-intro > img {
+    border-radius: 32px 32px 0 0;
+  }
+
+  .gift-text {
+    padding: 38px 20px 44px;
+  }
+
+  .gift-text h2 {
+    font-size: 34px;
+  }
+
+  .gift-text p {
+    font-size: 17px;
+
+    line-height: 1.65;
+  }
+
+  .gift-cards {
+    margin-top: 35px;
+
+    gap: 24px;
+  }
+
+  .bank-card {
+    border-radius: 27px;
+
+    min-height: 225px;
+
+    padding: 28px 21px 20px;
+  }
+
+  .bank-logo {
+    right: 22px;
+    top: 22px;
+  }
+
+  .copy-btn {
+    border-radius: 999px;
+  }
+
+  .address-card {
+    min-height: auto;
+
+    padding: 32px 21px 28px;
+  }
+}
+/* ---------- Comments ---------- */
+
+.comments-section {
+  padding: 65px 20px 80px;
+}
+
+.section-title.light {
+  color: white;
+}
+
+.comments-box {
+  max-width: 660px;
+  margin: auto;
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.comment-count {
+  text-align: center;
+  padding: 25px;
+  border-bottom: 1px solid #eee;
+  font-family: var(--sans);
+  font-weight: 600;
+  color: #806f5b;
+}
+
+#commentForm {
+  padding: 28px;
+  display: grid;
+  gap: 16px;
+}
+
+#commentForm input,
+#commentForm textarea,
+#commentForm select {
+  width: 100%;
+  border: 1px solid #e3ddd5;
+  border-radius: 18px;
+  padding: 15px;
+  outline: none;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: #555;
+  background: white;
+}
+
+#commentForm textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+#commentForm .btn {
+  justify-self: start;
+}
+
+.comment-item {
+  padding: 24px 28px;
+  border-top: 1px solid #eee;
+}
+
+.comment-item h4 {
+  font-family: var(--sans);
+  color: #75644e;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.comment-item p {
+  font-family: var(--sans);
+  line-height: 1.8;
+  color: #666;
+}
+
+#commentList {
+  max-height: 300px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar daftar ucapan */
+#commentList::-webkit-scrollbar {
+  width: 5px;
+}
+
+#commentList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#commentList::-webkit-scrollbar-thumb {
+  background: #c8b39a;
+  border-radius: 999px;
+}
+
+/* ---------- Closing ---------- */
+
+.closing {
+  min-height: 100svh;
+  background-image: url("../assets/images/closing.jpg");
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.closing-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 70px 20px 130px;
+}
+
+.closing-content p {
+  font-size: 55px;
+  line-height: 1;
+}
+
+.closing-content h2 {
+  font-size: 48px;
+  line-height: 1;
+  margin-top: 10px;
+}
+
+/* ---------- Placeholder saat gambar belum diganti ---------- */
+
+.image-placeholder {
+  background: linear-gradient(135deg, #d9d1c5, #a99a87);
+  color: white;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  object-fit: contain !important;
+  padding: 30px;
+}
+
+/* ---------- Desktop: tetap fokus mobile, tapi tidak melebar berlebihan ---------- */
+
+@media (min-width: 700px) {
+  body {
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.18);
+  }
+
+  .cover,
+  .hero,
+  .closing {
+    min-height: 900px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   MODERN POLISH
+   Hanya visual. HTML dan JavaScript tidak berubah.
+   ========================================================= */
+
+.cover-content .btn-outline {
+  border-radius: 999px;
+  background: rgba(87, 67, 48, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.time-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.event-content .btn {
+  border-radius: 999px;
+}
+
+.gift-intro {
+  background: linear-gradient(180deg, #ffffff 0%, #faf7f2 100%);
+  box-shadow: 0 14px 32px rgba(73, 55, 38, 0.13);
+}
+
+.address-card {
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(173, 155, 131, 0.1),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #ffffff 0%, #f4f0eb 100%);
+}
+
+#commentForm input:focus,
+#commentForm textarea:focus,
+#commentForm select:focus {
+  border-color: var(--brown-light);
+  box-shadow: 0 0 0 4px rgba(165, 143, 120, 0.12);
+}
+
+.comment-item {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.gift-section,
+.comments-section {
+  background-image:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(255, 255, 255, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(255, 255, 255, 0.06),
+      transparent 30%
+    );
+}
+
+/* =========================================================
+   SUPPORTED BY
+   ========================================================= */
+
+.supported-by {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.supported-by span {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 1.8px;
+  margin-bottom: 14px;
+}
+
+.supported-by img {
+  width: 140px;
+  height: auto;
+  max-height: 70px;
+  object-fit: contain;
+  display: block;
+  /* membuat logo menjadi putih */
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+/* =========================================================
+   SCROLL REVEAL ANIMATION
+   ========================================================= */
+
+/* Kondisi awal sebelum masuk layar */
+.reveal {
+  opacity: 0;
+  transform: translateY(45px) scale(0.97);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Saat masuk layar */
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ---------- Variasi dari kiri ---------- */
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-45px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---------- Variasi dari kanan ---------- */
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(45px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---------- Efek Pop ---------- */
+
+.reveal-pop {
+  opacity: 0;
+  transform: scale(0.82);
+  transition:
+    opacity 0.7s ease,
+    transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reveal-pop.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---------- Stagger Gallery ---------- */
+
+.gallery-grid .reveal:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.gallery-grid .reveal:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.gallery-grid .reveal:nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+.gallery-grid .reveal:nth-child(4) {
+  transition-delay: 0.35s;
+}
+
+.gallery-grid .reveal:nth-child(5) {
+  transition-delay: 0.45s;
+}
+
+.gallery-grid .reveal:nth-child(6) {
+  transition-delay: 0.55s;
+}
+
+/* ---------- Animasi nama pengantin ---------- */
+
+.person-info.reveal {
+  transition-delay: 0.15s;
+}
+
+/* ---------- Animasi & ---------- */
+
+.ampersand.reveal-pop {
+  transition-delay: 0.1s;
+}
+
+/* ---------- Hormati pengguna yang mematikan animasi ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-pop {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
